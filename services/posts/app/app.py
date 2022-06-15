@@ -8,12 +8,12 @@ app = Flask(__name__)
 POST_LIST = []
 
 
-@app.route('/post', methods=['GET'])
+@app.route('/api/posts/post', methods=['GET'])
 def get_posts():
     return jsonify(POST_LIST), 200
 
 
-@app.route('/post', methods=['POST'])
+@app.route('/api/posts/post', methods=['POST'])
 def create_post():
     json = request.get_json(force=True)
     author = json.get('author', None)
