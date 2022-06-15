@@ -29,7 +29,7 @@ def get_user_by_username(username):
     return user_response
 
 
-@app.route('/user/<user_id>', methods=['GET'])
+@app.route('/api/user/<user_id>', methods=['GET'])
 def user_data(user_id):
     user = get_user_by_id(int(user_id))
     if user is None:
@@ -37,7 +37,7 @@ def user_data(user_id):
     return jsonify(user)
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/api/user/login', methods=['POST'])
 def login():
     json = request.get_json(force=True)
     username = json.get('username')
