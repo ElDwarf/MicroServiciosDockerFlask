@@ -10,7 +10,7 @@ POST_LIST = []
 
 @app.route('/api/posts/post', methods=['GET'])
 def get_posts():
-    return jsonify(POST_LIST), 200
+    return jsonify({'data': POST_LIST}), 200
 
 
 @app.route('/api/posts/post', methods=['POST'])
